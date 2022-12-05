@@ -66,11 +66,13 @@ function nextSong(){
 
 
 function prevSong(){
-    console.log(songList[i].songUrl)
     audio.pause();
     flag=false;
-    i=i-1;
-    if(i<=0){
+    
+    if(i>=0){
+        i=i-1;
+    }
+    else{
         i=songList.length-1;
     }
     audio = new Audio(songList[i].songUrl);
@@ -80,7 +82,7 @@ function prevSong(){
         audio.play();
         flag=true;
     }
-    console.log(songList[i].songUrl)
+   
 
 }
 
